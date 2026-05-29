@@ -29,7 +29,10 @@ struct Graphics {
 
 impl Graphics {
     fn new(window: Arc<Window>, vsync: bool, prelude: String, first_body: &str) -> Result<Self> {
-        let instance = wgpu::Instance::default();
+        let instance = wgpu::Instance::new(&wgpu::InstanceDescriptor {
+            backends: wgpu::Backends::VULKAN,
+            ..Default::default()
+        });
         let surface = instance
             .create_surface(window.clone())
             .context("creating the render surface")?;
