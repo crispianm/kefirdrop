@@ -171,6 +171,7 @@ fn pulse_loop(
     cfg: &AudioConfig,
 ) -> Result<()> {
     use anyhow::anyhow;
+    use libpulse_binding::def::BufferAttr;
     use libpulse_binding::sample::{Format, Spec};
     use libpulse_binding::stream::Direction;
     use libpulse_simple_binding::Simple;
@@ -190,6 +191,16 @@ fn pulse_loop(
         return Err(anyhow!("invalid PulseAudio sample spec"));
     }
 
+    // 256 stereo f32 frames ≈ 6 ms at 44.1 kHz. Passing an explicit BufferAttr
+    // prevents PulseAudio from using its default ~2 s server-side buffer.
+    const FRAMES: usize = 256;
+    let frag_bytes = (FRAMES * 2 * std::mem::size_of::<f32>()) as u32;
+    let buf_attr = BufferAttr {
+        fragsize: frag_bytes,
+        maxlength: frag_bytes * 4,
+        ..Default::default()
+    };
+
     let simple = Simple::new(
         None,              // default server
         "kefirdrop",       // application name
@@ -197,12 +208,11 @@ fn pulse_loop(
         device.as_deref(), // monitor source (or default)
         "system monitor",  // stream description
         &spec,
-        None, // default channel map
-        None, // default buffering
+        None,              // default channel map
+        Some(&buf_attr),   // low-latency buffer
     )
     .map_err(|e| anyhow!("could not connect to PulseAudio/PipeWire: {e}"))?;
 
-    const FRAMES: usize = 1024;
     let mut frames = [0.0f32; FRAMES * 2]; // interleaved stereo
     let mut mono = [0.0f32; FRAMES];
 
