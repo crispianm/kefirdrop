@@ -1,0 +1,3 @@
+name = "Plasma"
+shader = "shaders/presets/plasma.wgsl"
+description = "Layered sine plasma modulated by bass, mids and beat."

@@ -1,0 +1,3 @@
+name = "Spectrum Bars"
+shader = "shaders/presets/spectrum.wgsl"
+description = "Frequency bars rising from the bottom with fading trails."
