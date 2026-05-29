@@ -1,0 +1,3 @@
+name = "Cyber Grid"
+shader = "shaders/presets/cyber_grid.wgsl"
+description = "Retro 3D perspective floor grid that illuminates with bass drops"

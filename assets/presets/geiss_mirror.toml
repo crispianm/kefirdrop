@@ -1,0 +1,3 @@
+name = "Geiss Mirror"
+shader = "shaders/presets/geiss_mirror.wgsl"
+description = "Classic 4-way vertical/horizontal symmetry mirror spinning the feed"

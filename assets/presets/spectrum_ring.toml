@@ -1,0 +1,3 @@
+name = "Spectrum Ring"
+shader = "shaders/presets/spectrum_ring.wgsl"
+description = "360-degree wrap of the 64-bin spectrum pushing outward"

@@ -1,0 +1,3 @@
+name = "Infinite Tunnel"
+shader = "shaders/presets/infinite_tunnel.wgsl"
+description = "Endless rectangular-prism styled feedback tunnel"

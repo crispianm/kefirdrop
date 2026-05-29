@@ -1,0 +1,3 @@
+name = "Magnetic Field"
+shader = "shaders/presets/magnetic_field.wgsl"
+description = "Dipole vector equations creating two attractive color nodes"

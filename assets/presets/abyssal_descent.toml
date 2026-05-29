@@ -1,0 +1,3 @@
+name = "Abyssal Descent"
+shader = "shaders/presets/abyssal_descent.wgsl"
+description = "Inward zooming with forced darkening at the center"

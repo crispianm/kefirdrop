@@ -1,0 +1,3 @@
+name = "Plasma Core"
+shader = "shaders/presets/plasma_core.wgsl"
+description = "Classic demoscene 2D interfering plasma equations"

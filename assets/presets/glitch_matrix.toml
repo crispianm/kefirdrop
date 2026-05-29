@@ -1,0 +1,3 @@
+name = "Glitch Matrix"
+shader = "shaders/presets/glitch_matrix.wgsl"
+description = "Digital artifacts with blocky grid distortion driven by audio"

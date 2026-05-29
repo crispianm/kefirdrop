@@ -1,0 +1,3 @@
+name = "Milkdrop Classic"
+shader = "shaders/presets/milkdrop_classic.wgsl"
+description = "Slow rotation, outward zoom, and pulsing audio star center"

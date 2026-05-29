@@ -1,0 +1,3 @@
+name = "Vector Scope"
+shader = "shaders/presets/vector_scope.wgsl"
+description = "Tracing Lissajous figure intersecting with the feedback grid"

@@ -1,0 +1,3 @@
+name = "Grid Distortion"
+shader = "shaders/presets/grid_distortion.wgsl"
+description = "Visual gravity distortion on the beat by pinching the feed"

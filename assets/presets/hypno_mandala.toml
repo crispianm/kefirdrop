@@ -1,0 +1,3 @@
+name = "Hypno Mandala"
+shader = "shaders/presets/hypno_mandala.wgsl"
+description = "Polar twisting based on radius creating mandala-like interlocking petals"

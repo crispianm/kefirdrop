@@ -1,0 +1,3 @@
+name = "Kaleido-Drop"
+shader = "shaders/presets/kaleido_drop.wgsl"
+description = "6-way mathematical kaleidoscope folding inwards on the beat"

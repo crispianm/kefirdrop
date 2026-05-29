@@ -1,0 +1,3 @@
+name = "Warp Speed"
+shader = "shaders/presets/warp_speed.wgsl"
+description = "Starry zoom with procedural pixels scaling outward"

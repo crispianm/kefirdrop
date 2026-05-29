@@ -1,0 +1,3 @@
+name = "Liquid Echo"
+shader = "shaders/presets/liquid_echo.wgsl"
+description = "Sine-wave domain distortion creating a fluid echo-like effect"

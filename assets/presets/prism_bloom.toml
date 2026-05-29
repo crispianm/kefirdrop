@@ -1,0 +1,3 @@
+name = "Prism Bloom"
+shader = "shaders/presets/prism_bloom.wgsl"
+description = "Triangular-based symmetry with harsh folding"

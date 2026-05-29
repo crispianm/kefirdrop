@@ -1,0 +1,3 @@
+name = "Pulse Nova"
+shader = "shaders/presets/pulse_nova.wgsl"
+description = "Bright central starburst shedding angular rays on the beat"

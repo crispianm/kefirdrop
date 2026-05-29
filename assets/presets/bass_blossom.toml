@@ -1,0 +1,3 @@
+name = "Bass Blossom"
+shader = "shaders/presets/bass_blossom.wgsl"
+description = "Blooming flower whose petals reach outwards with low-frequency energy"

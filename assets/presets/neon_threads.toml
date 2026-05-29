@@ -1,0 +1,3 @@
+name = "Neon Threads"
+shader = "shaders/presets/neon_threads.wgsl"
+description = "Horizontal screen-pan revealing vertical sine threads"

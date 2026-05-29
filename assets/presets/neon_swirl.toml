@@ -1,0 +1,3 @@
+name = "Neon Swirl"
+shader = "shaders/presets/neon_swirl.wgsl"
+description = "Rotational feedback with bass-reactive pulsing rings"

@@ -1,0 +1,3 @@
+name = "Treble Webs"
+shader = "shaders/presets/treble_webs.wgsl"
+description = "Jagged spidery lightning mapping to high-frequency energy"
