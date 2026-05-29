@@ -1,0 +1,50 @@
+[package]
+name = "kefirdrop"
+version = "0.1.0"
+edition = "2021"
+description = "A GPU-accelerated, real-time music visualizer for Linux audiophiles, inspired by MilkDrop."
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/crispianm/kefirdrop"
+readme = "README.md"
+
+[dependencies]
+# Windowing + GPU
+winit = "0.30"
+wgpu = "24.0"
+pollster = "0.4"
+bytemuck = { version = "1", features = ["derive"] }
+
+# Audio analysis
+rustfft = "6"
+ringbuf = "0.4"
+
+# Presets / config / shader hot-reload
+serde = { version = "1", features = ["derive"] }
+toml = "0.8"
+notify = "8"
+
+# Plumbing
+anyhow = "1"
+log = "0.4"
+env_logger = "0.11"
+
+# Real audio capture from the PipeWire/PulseAudio monitor source.
+# Optional so the core engine still builds on machines without libpulse headers
+# (e.g. CI). Enable with `--features pulse` on your Arch box.
+libpulse-binding = { version = "2", optional = true }
+libpulse-simple-binding = { version = "2", optional = true }
+
+[dev-dependencies]
+# Same WGSL front-end + validator wgpu uses, so we can statically verify shaders
+# (assembled prelude + preset) without a GPU.
+naga = { version = "24", features = ["wgsl-in"] }
+
+[features]
+# Build the real audio capture backend by default on a normal Linux desktop.
+default = ["pulse"]
+pulse = ["dep:libpulse-binding", "dep:libpulse-simple-binding"]
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1

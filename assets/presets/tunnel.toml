@@ -1,0 +1,3 @@
+name = "Feedback Tunnel"
+shader = "shaders/presets/tunnel.wgsl"
+description = "Zooming, rotating feedback tunnel driven by bass and treble."
